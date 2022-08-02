@@ -7,6 +7,10 @@
     <title>Etch-A-Sketch</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,100&display=swap" rel="stylesheet" />
   </head>
   <body onload="changeGrid()">
     <div class="row1">
@@ -15,6 +19,8 @@
 
         <label for="slider" id="sliderLabel"></label>
         <input id="slider" type="range" min="1" max="64" value="32" />
+        <button id="eraser">Eraser</button>
+        <button id="clear">Clear</button>
       </div>
 
       <div class="columnMain">
@@ -22,7 +28,6 @@
 
         <div class="container-grid"></div>
       </div>
-
-     </div>
+    </div>
   </body>
 </html>

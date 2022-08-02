@@ -2,36 +2,43 @@ let containerGrid = document.querySelector(".container-grid");
 const slider = document.querySelector("#slider");
 const label = document.querySelector("#sliderLabel");
 let color = document.querySelector("#color");
+const eraser = document.querySelector("#eraser");
+const clear = document.querySelector("#clear");
 
 let mouseDown = false;
 
 document.body.onmousedown = () => (mouseDown = true);
 document.body.onmouseup = () => (mouseDown = false);
 
-
-
-
 slider.addEventListener("input", function () {
   changeGrid(slider.value);
 });
 color.addEventListener("input", function () {
-    hover();
-  });
-  
+  hover();
+});
 
+eraser.addEventListener("click", function () {
+  color.value = "#FFFFFF";
+  hover();
+});
 
+clear.addEventListener("click", function () {
+  changeGrid();
+});
 
-function hover(){
-    
-    let style = document.createElement("style");
-    style.type = "text/css";
-    style.innerHTML = `
+function hover() {
+  let style = document.createElement("style");
+  style.type = "text/css";
+  style.innerHTML =
+    `
     .square:hover {
-        background-color:` + color.value + `
+        background-color:` +
+    color.value +
+    `
     }
-;`
-    
-    document.head.appendChild(style);
+;`;
+
+  document.head.appendChild(style);
 }
 
 function changeGrid() {
@@ -66,8 +73,6 @@ function createGrid(num) {
     square.addEventListener("click", function (event) {
       square.style.backgroundColor = color.value;
     });
-
-
   }
 
   hover();
